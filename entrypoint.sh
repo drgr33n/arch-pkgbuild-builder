@@ -48,7 +48,7 @@ pkgname="$(basename "$pkgbuild_dir")" # keep quotes in case someone passes in a 
 
 install_deps() {
     # install make and regular package dependencies
-    grep -E 'depends|makedepends' PKGBUILD | \
+    grep -E 'makedepends' PKGBUILD | \
         grep -v optdepends | \
         sed -e 's/.*depends=//' -e 's/ /\n/g' | \
         tr -d "'" | tr -d "(" | tr -d ")" | \
